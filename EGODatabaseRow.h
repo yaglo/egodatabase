@@ -53,5 +53,8 @@
 - (NSDate*)dateForColumn:(NSString*)columnName;
 - (NSDate*)dateForColumnIndex:(int)columnIdx;
 
+- (NSData*)dataForColumn:(NSString*)columnName;
+- (NSData*)dataForColumnIndex:(int)columnIdx;
+
 @property(readonly) NSMutableArray* columnData;
 @end

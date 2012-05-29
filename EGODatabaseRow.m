@@ -103,6 +103,16 @@
     return [NSDate dateWithTimeIntervalSince1970:[self doubleForColumnIndex:columnIndex]];
 }
 
+- (NSData*)dataForColumn:(NSString*)columnName {
+    int columnIndex = [self columnIndexForName:columnName];
+       if(columnIndex < 0 || columnIndex == NSNotFound) return 0;
+    return [columnData objectAtIndex:columnIndex];
+}
+
+- (NSData*)dataForColumnIndex:(int)columnIndex {
+    return [columnData objectAtIndex:columnIndex];
+}
+
 - (void)dealloc {
 	// [result release];
 	[columnData release];
